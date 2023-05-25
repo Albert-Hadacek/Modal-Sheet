@@ -11,7 +11,7 @@ function App() {
     const fetchData = async () => {
        const res = await fetch("https://jsonplaceholder.typicode.com/users")
        const data = await res.json()
-       setData(data.slice(0,4))
+       setData(data.slice(0,8))
     }
     fetchData()
   }, [])
@@ -28,7 +28,7 @@ function App() {
         <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
           <Sheet.Container className="sheet-container-custom">
             <Sheet.Header />
-            <Sheet.Content>
+            <Sheet.Content dragListener={false}>
               <h1 className="title">Test Users</h1>
               <div>
                 {data.map(d =>(<p className="li-item" key={d.id}>{d.name}</p>))}
