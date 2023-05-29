@@ -3,6 +3,7 @@
 }
 .title {
     text-align: center;
+    font-size: 24px;
 }
 .li-item {
     margin: 20px;
@@ -11,6 +12,21 @@
     padding: 20px;
 }
 
+.close {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-color: lightgray;
+    border-radius: 5%;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 5454545454545;
+}
 .icon {
     display: inline-block;
     height: 50px;

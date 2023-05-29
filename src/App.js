@@ -27,9 +27,12 @@ function App() {
       <>
         <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
           <Sheet.Container className="sheet-container-custom">
-            <Sheet.Header />
+            <Sheet.Header/>
+            <div>
+              <h1 className="title">Lorem ipsum, lorem ipsum, lorem ipsum</h1>
+              <span className="close" onClick={handleButtonToggle}>X</span>
+            </div>
             <Sheet.Content dragListener={false}>
-              <h1 className="title">Test Users</h1>
               <div>
                 {data.map(d =>(<p className="li-item" key={d.id}>{d.name}</p>))}
               </div>
@@ -38,7 +41,8 @@ function App() {
 
           <Sheet.Backdrop />
         </Sheet>
-        <span onClick={handleButtonToggle} className="icon">{isOpen ? "Close" : "Open"}</span>
+        {!isOpen && <span onClick={handleButtonToggle} className="icon">{isOpen ? "Close" : "Open"}</span>}
+
       </>
       )
 }
