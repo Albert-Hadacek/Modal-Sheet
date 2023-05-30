@@ -1,3 +1,8 @@
+html {
+    overflow: auto!important;
+    padding-right: unset!important;
+}
+
 .sheet-container-custom {
     height: 80%!important;
 }
@@ -25,19 +30,57 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 5454545454545;
 }
 .icon {
     display: inline-block;
     height: 50px;
     width: 50px;
-    background-color: aqua;
+    background-color: green;
     border-radius: 50%;
     text-align: center;
     line-height: 50px;
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 5454545454545;
+}
+
+@media only screen and (min-width: 600px) {
+    .sheet-container-custom {
+        height: 65%!important;
+        width: 340px!important;
+        padding: 20px!important;
+        border-radius: 8px!important;
+        left: unset!important;
+        bottom: 100px!important;
+        right: 30px!important;
+    }
+            /* width */
+    .sheet-container-custom ::-webkit-scrollbar {
+        width: 5px;
+        border-radius: 5px;
+    }
+
+    /* Track */
+    .sheet-container-custom ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    /* Handle */
+    .sheet-container-custom ::-webkit-scrollbar-thumb {
+        background: lightgray;
+        border-radius: 5px;
+    }
+
+    .sheet-header {
+        display: none;
+    }
+    .title {
+        padding-top: 10px!important;
+    }
+
+    .react-modal-sheet-backdrop {
+       display: none!important;
+    }
 }

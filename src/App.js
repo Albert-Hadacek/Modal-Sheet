@@ -1,6 +1,6 @@
 
 import Sheet from 'react-modal-sheet';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import "./App.css"
 
 function App() {
@@ -17,17 +17,18 @@ function App() {
   }, [])
 
   const handleButtonToggle = () => {
-    setOpen((prevState) => !prevState)
+    setOpen(prevState => !prevState)
   }
+
   if(!data.length) {
     return null
   }
 
     return (
       <>
-        <Sheet isOpen={isOpen} onClose={() => setOpen(false)}>
+        <Sheet className="sheet-custom" isOpen={isOpen} onClose={() => setOpen(false)}>
           <Sheet.Container className="sheet-container-custom">
-            <Sheet.Header/>
+            <Sheet.Header className="sheet-header"/>
             <div>
               <h1 className="title">Lorem ipsum, lorem ipsum, lorem ipsum</h1>
               <span className="close" onClick={handleButtonToggle}>X</span>
@@ -41,7 +42,7 @@ function App() {
 
           <Sheet.Backdrop />
         </Sheet>
-        {!isOpen && <span onClick={handleButtonToggle} className="icon">{isOpen ? "Close" : "Open"}</span>}
+        <span onClick={handleButtonToggle} className="icon">{isOpen ? "Close" : "Open"}</span>
 
       </>
       )
